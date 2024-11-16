@@ -1,0 +1,21 @@
+
+{% comment %}  
+{%for todo in todo_list%}
+
+<tr>{{todo.tittle}} {{todo.create_at}} <a href="{%url 'todo_update' todo.pk%}"> Atualizar </a><a href="{%url 'todo_delete' todo.pk%}"> excluir </a>
+<tr>
+
+{% endfor %}
+<a href="{% url 'todo_create' %}">criar nova</a>
+{% endcomment %}
+{%for todo in todo_list%}
+
+<tr><br><br>
+    Titulo: {{todo.tittle}}     <a href="{%url 'todo_update' todo.pk%}"> Atualizar </a><a href="{%url 'todo_delete' todo.pk%}"> excluir </a>   <br>
+    Data de criacao: {{todo.create_at}} <br>
+    Prazo Final: {{todo.deadline}} <br>
+    Finalizado em: {{todo.finished_at}} <br>
+<tr>
+
+{% endfor %}
+<a href="{% url 'todo_create' %}">criar nova</a>

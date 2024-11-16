@@ -1,0 +1,15 @@
+{%for todo in todo_list%}
+
+<tr>{{todo.tittle}} {{todo.create_at}} <a href="{%url 'todo_update' todo.pk%}"> Atualizar </a><a href="{%url 'todo_delete' todo.pk%}"> excluir </a>
+<tr>
+
+{% endfor %}
+<a href="{% url 'todo_create' %}">criar nova</a>
+
+form
+<form method="post"> 
+    {% csrf_token %}
+    {{ form.as_p }} //deletar so tirar
+    <button type="submit">Salvar</button>
+</form>
+
